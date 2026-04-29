@@ -7,7 +7,7 @@ spec:
   project: default  
 
   source:
-    repoURL: 'https://github.com/brentlaster/roar-deploy-k8s.git'
+    repoURL: 'https://github.com/SamuelSANZOUANGO/argocd-application.git'
     targetRevision: HEAD
     path: . \
 
