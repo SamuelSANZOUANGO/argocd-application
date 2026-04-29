@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-argocd-app
+  namespace: argocd
+spec:
+  project: default  
+
+  source:
+    repoURL: 'https://github.com/brentlaster/roar-deploy-k8s.git'
+    targetRevision: HEAD
+    path: . \
+
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: myapp
+
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+  
+    automated:
+      prune: true
+      selfHeal: true
